@@ -5,7 +5,7 @@ const massage = document.querySelector("#massage");
 const consent = document.querySelector("#consent");
 const contactForm = document.querySelector("#contact-form");
 const querytypes = document.getElementsByName("query");
-console.log(querytypes);
+const alertEl = document.querySelector(".alert");
 
 // select error elm
 const fullNameErrEl = document.querySelector("#fullNameErr");
@@ -78,12 +78,15 @@ contactForm.addEventListener("submit", (e) => {
     data.queryType
   ) {
     console.log(data);
+    alertEl.classList.add("active");
+    setTimeout(() => {
+      alertEl.classList.remove("active");
+    }, 3000);
     resetForm();
   }
 });
 
-
 function resetForm() {
-   fullName.value = email.value = massage.value = "";
-   contactForm.reset();
+  fullName.value = email.value = massage.value = "";
+  contactForm.reset();
 }

@@ -44,7 +44,7 @@ body {
   overflow: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  z-index: 1000;
+  z-index: 100;
 }
 .contact {
   background: #fff;
@@ -212,6 +212,34 @@ textarea {
   color: #8f50ec;
   cursor: pointer;
   font-weight: 500;
+}
+
+
+
+.alert{
+  max-width: 350px;
+  width: 100%;
+  min-height:3rem;
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: .8rem;
+  padding: 1rem;
+  z-index: 10000;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  transition: all 250ms ease-in-out;
+}
+.alert-content h3{
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+.alert.active{
+  top: 2%;
 }
 
 @media screen and (max-width: 850px) {
